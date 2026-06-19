@@ -1,11 +1,11 @@
 # Task Manager
 
-A full-stack Task Manager web application built with PHP and MySQL. Features a complete authentication system with session management and a clean responsive UI.
+A full-stack Task Manager web application built with PHP and MySQL. Features a public landing page, a complete authentication system with session management, and a clean, responsive UI.
 
-## 🌐 Live Demo
-[https://suhaibtasks.infinityfreeapp.com/login.php](https://suhaibtasks.infinityfreeapp.com/login.php)
+
 
 ## Features
+- Public landing page introducing the app
 - User registration and login system
 - Password hashing for security
 - Session management
@@ -24,11 +24,6 @@ A full-stack Task Manager web application built with PHP and MySQL. Features a c
 - XAMPP (local server)
 - Git/GitHub
 
-## 🌐 Online Access
-Visit the live site directly at:  https://suhaibtasks.infinityfreeapp.com/login.php
-
-- Register a new account
-- Login and start managing your tasks
 
 ## 💻 How to Run Locally
 1. Install XAMPP
@@ -56,36 +51,42 @@ CREATE TABLE tasks (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
-5. Update `config.php` with your local database details:
-```php
-$host = 'localhost';
-$dbname = 'task_manager';
-$username = 'root';
-$password = '';
+5. Copy `config.example.php` to `config.php` and fill in your local database details:
+```bash
+cp config.example.php config.php
 ```
-6. Open your browser and go to: http://localhost/task-manager/login.php
+Then edit `config.php` with your actual database host, name, username, and password. (This file is gitignored and won't be committed.)
+6. Open your browser and go to: http://localhost/task-manager/index.php
 
 ## Project Structure
 
 task-manager/
 
-├── config.php        # Database connection
+├── config.example.php  # Database connection template (safe to share)
 
-├── index.php         # Main page - displays all tasks
+├── config.php           # Your real DB credentials (gitignored, not in repo)
 
-├── login.php         # Login page
+├── index.php             # Public landing page
 
-├── register.php      # Registration page
+├── dashboard.php         # Main task dashboard (requires login)
 
-├── logout.php        # Handles logout
+├── login.php             # Login page
 
-├── add_task.php      # Handles adding new tasks
+├── register.php          # Registration page
 
-├── complete_task.php # Handles marking tasks complete
+├── logout.php            # Handles logout
 
-├── delete_task.php   # Handles deleting tasks
+├── add_task.php          # Handles adding new tasks
 
-└── style.css         # Styling
+├── complete_task.php     # Handles marking tasks complete
+
+├── delete_task.php       # Handles deleting tasks
+
+├── style.css              # Dashboard/auth page styling
+
+├── landing.css            # Landing page styling
+
+└── .gitignore             # Excludes config.php and other local files
 
 ## Author
 [suhaibyaseenn](https://github.com/suhaibyaseenn)
