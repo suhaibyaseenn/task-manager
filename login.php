@@ -3,7 +3,7 @@ session_start();
 include 'config.php';
 
 if (isset($_SESSION['user_id'])) {
-    header('Location: /index.php');
+    header('Location: dashboard.php');
     exit();
 }
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
-            header('Location: /index.php');
+            header('Location: dashboard.php');
             exit();
         } else {
             $error = 'Invalid email or password.';
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Task Manager</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -50,13 +50,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="alert error"><?= $error ?></div>
         <?php endif; ?>
 
-        <form action="/login.php" method="POST">
+        <form action="login.php" method="POST">
             <input type="email" name="email" placeholder="Email address" required>
             <input type="password" name="password" placeholder="Password" required>
             <button type="submit">Login</button>
         </form>
 
-        <p class="auth-link">Don't have an account? <a href="/register.php">Register here</a></p>
+        <p class="auth-link">Don't have an account? <a href="register.php">Register here</a></p>
     </div>
 </div>
 

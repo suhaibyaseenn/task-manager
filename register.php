@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Task Manager</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="alert success"><?= $success ?></div>
         <?php endif; ?>
 
-        <form action="/register.php" method="POST">
+        <form action="register.php" method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="email" name="email" placeholder="Email address" required>
             <input type="password" name="password" placeholder="Password (min 6 characters)" required>
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Create Account</button>
         </form>
 
-        <p class="auth-link">Already have an account? <a href="/login.php">Login here</a></p>
+        <p class="auth-link">Already have an account? <a href="login.php">Login here</a></p>
     </div>
 </div>
 
