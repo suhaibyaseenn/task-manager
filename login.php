@@ -57,6 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </form>
 
         <p class="auth-link">Don't have an account? <a href="register.php">Register here</a></p>
+        <p class="auth-link"><a href="forgot_password.php">Forgot your password?</a></p>
     </div>
 </div>
 
